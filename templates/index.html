@@ -42,10 +42,10 @@
 	</nav>
 
 	<div class="container" id="primaryView">
-		<h1>Hello, world!</h1>
+
 		{% block content %} {% endblock %}
 	</div>
-	
+
 
 	<!-- jQuery first, then Tether, then Bootstrap JS. -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7"
@@ -94,7 +94,33 @@
 
 				
 			});
+			//for create post function
+			//temporarily here
+			$("#postButton").click(function(e){
+				e.preventDefault();
+				console.log("TEST");
+				//check data
+				//var test = $("#radioPrivate").val();
+				//console.log(test);
+				var message ={
+					postTitle : $("#postTitle").val(),
+					postBody: $("#postBody").val()
+				}
+				console.log(message.postTitle+" Content: "+message.postBody);
+				$post("/newPost/",message,function(data){
+
+					console.log(data);
+				}
+				);
+
+
+
+			}
+			);//to append data
+
+
 			</script>
+
 
 
 

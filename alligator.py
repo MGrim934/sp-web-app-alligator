@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for
 
 app = Flask(__name__)
 
@@ -22,6 +22,15 @@ def posts():
 def page_not_found(e):
     #official flask documentation
     return render_template('404.html'), 404
+
+@app.route("/create/")
+def moveToCreate():
+    return render_template("createPost.html")
+
+
+@app.route("/newPost/", methods=["GET","POST"])
+def storePost():
+    return 1
 
 if __name__ == "__main__":
     app.run(debug=True)
