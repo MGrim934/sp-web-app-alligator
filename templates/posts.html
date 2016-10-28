@@ -1,5 +1,13 @@
-<div>
-    this is a test
-    <h1> Just checking all of that style stuff </h1>
-    {{post}}
-    </div>
+{% extends "index.html" %}
+{% block content %}
+<h2> PostList</h2>
+<!--a form goes here
+three primary fields
+Header, lead, content -->
+<!-- each post should have post id, poster id, title, lead, content -->
+{% for p in postList%}
+<h1>{{p["title"]}}</h1>
+{{p.content}}
+{% endfor %}
+
+{% endblock %}

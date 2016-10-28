@@ -6,16 +6,16 @@ three primary fields
 Header, lead, content -->
 <!-- each post should have post id, poster id, title, lead, content -->
 
-<form action="POST">
+<form action="/newpost/" method = "POST">
   <div class="form-group">
     <label for="Title">Post Title</label>
-    <input type="text" class="form-control" id="postTitle" aria-describedby="emailHelp" placeholder="Your Title">
+    <input type="text" class="form-control" name="postTitle" id="postTitle" aria-describedby="emailHelp" placeholder="Your Title">
     <small id="Title Help" class="form-text text-muted">The Title of your post</small>
   </div>
 
   <div class="form-group">
     <label for="pBody">Post Content</label>
-    <textarea class="form-control" id="postBody" rows="4"></textarea>
+    <textarea type = "text" class="form-control" name = "postContent" id="postContent" rows="4"></textarea>
   </div>
 
 
